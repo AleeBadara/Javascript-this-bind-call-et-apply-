@@ -24,7 +24,7 @@ Le premier **this** (dans console.log(this)), correspond à l’objet **window**
 Le second **this** (dans l'objet country), correspond à l’objet **country**.
 
 Lorsque que **this** est utilisé dans un objet, il fait référence à l’objet lui même. Lorsqu’il est utilisé en dehors d’un objet, il fait référence à la variable globale (dans notre exemple, la variable **window**).
-Créons une nouvelle méthode ***getMoreInfoAboutCountry*** en dehors de l’objet **country**. Cette méthode prend en paramétre 2 variables (continent et nombre de population) et logge la description du pays (via la méthode ***getDescription*** de l’objet **country**) plus les 2 informations passées en paramétres (continent et population).
+Créons une nouvelle méthode ***getMoreInfoAboutCountry*** en dehors de l’objet **country**. Cette méthode prend en paramétre 2 variables (continent et nombre de population) et affiche la description du pays (via la méthode ***getDescription*** de l’objet **country**) plus les 2 informations passées en paramétres (continent et population).
 
 ```javascript
 var getMoreInfoAboutCountry= function(continent, population){

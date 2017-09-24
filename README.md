@@ -1,7 +1,7 @@
 # Javascript-this-bind-call-et-apply-
 Ci-dessous un petit aide mémoire sur les mots clés bind(), call() et apply() dans javascript.
 
-En javascript, les méthodes ***bind()***, ***call()*** et ***apply()*** sont en rapport à l’objet **this**.
+En javascript, les méthodes ***bind()*** , ***call()*** et ***apply()*** sont en rapport à l’objet **this**.
 **this** est un objet dont la valeur varie en fonction du contexte d’exécution.
 
 Considérons le script suivant : app.js

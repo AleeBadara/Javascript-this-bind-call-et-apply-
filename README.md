@@ -75,3 +75,5 @@ getMoreInfoAboutCountry.apply(country, ['Europe', '60 M']); // éxécute directe
 ```
 
 En résumé, les 3 méthodes permettent de changer la référence de **this**. bind() n’éxécute pas la fonction, mais crée une copie de celle-ci, contrairement à call() et apply() qui exécute la fonction.
+
+Vous pouvez retrouver plus de détails sur les notions **bind**, **call**, **apply** ou encore **this** sur [Mozilla Developer Network](https://developer.mozilla.org/fr/docs/Web/JavaScript).

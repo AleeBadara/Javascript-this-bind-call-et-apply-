@@ -35,9 +35,9 @@ getMoreInfoAboutCountry('Europe','67 M');
 
 L’appel de la fonction ***getMoreInfoAboutCountry('Europe','67 M')*** déclenche une erreur :
 
-*this.getDescription is not a function at getMoreInfoAboutCountry...*
+> *this.getDescription is not a function at getMoreInfoAboutCountry...*
 
-La raison de cette erreur est la suivante : le **this** (this.getDescription()) fait référence à l’objet **window** (car il est utilisé en dehors d’un objet).Dans ce cas, **this.getDescription()** est équivalent à **window.getDescription()**. La méthode ***getDescription*** n’étant pas une méthode de l’objet **window**, le moteur javascript affiche l’erreur *… is not a function*.
+La raison de cette erreur est la suivante : le **this** (dans this.getDescription()) fait référence à l’objet **window** (car il est utilisé en dehors d’un objet).Dans ce cas, **this.getDescription()** est équivalent à **window.getDescription()**. La méthode ***getDescription*** n’étant pas une méthode de l’objet **window**, le moteur javascript affiche l’erreur > *… is not a function*.
 
 Cependant, on peut influencer le fonctionnement interne de javascript, pour lui indiquer de pointer **this** à l’objet **country** et non à l’objet **window**. Pour cela, il existe 3 méthodes :
 

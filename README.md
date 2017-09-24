@@ -74,4 +74,4 @@ getMoreInfoAboutCountry.apply(country, ['Europe', '60 M']); // éxécute directe
 getMoreInfoAboutCountry.apply(country, ['Europe', '60 M']); // éxécute directement la fonction getMoreInfoAboutCountry avec l'objet "country" comme référence de "this". apply() prend un array en paramétre
 ```
 
-En résumé, bind() n’éxécute pas la fonction, mais crée une copie de celle-ci, contrairement à call() et apply() qui exécute la fonction.
+En résumé, les 3 méthodes permettent de changer la référence de **this**. bind() n’éxécute pas la fonction, mais crée une copie de celle-ci, contrairement à call() et apply() qui exécute la fonction.

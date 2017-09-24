@@ -37,7 +37,7 @@ L’appel de la fonction ***getMoreInfoAboutCountry('Europe','67 M')*** déclenc
 
 > *this.getDescription is not a function at getMoreInfoAboutCountry...*
 
-La raison de cette erreur est la suivante : le **this** (dans this.getDescription()) fait référence à l’objet **window** (car il est utilisé en dehors d’un objet).Dans ce cas, **this.getDescription()** est équivalent à **window.getDescription()**. La méthode ***getDescription*** n’étant pas une méthode de l’objet **window**, le moteur javascript affiche l’erreur > *… is not a function*.
+La raison de cette erreur est la suivante : le **this** (dans this.getDescription()) fait référence à l’objet **window** (car il est utilisé en dehors d’un objet).Dans ce cas, **this.getDescription()** est équivalent à **window.getDescription()**. La méthode ***getDescription*** n’étant pas une méthode de l’objet **window**, le moteur javascript affiche l’erreur *… is not a function*.
 
 Cependant, on peut influencer le fonctionnement interne de javascript, pour lui indiquer de pointer **this** à l’objet **country** et non à l’objet **window**. Pour cela, il existe 3 méthodes :
 
@@ -51,6 +51,7 @@ logCountryInfo('Europe','60 M');
 
 Dans notre cas, le ***bind()*** copie la méthode ***getMoreInfoAboutCountry*** et change l’objet **this** qui fait maintenant référence à l’objet passé en paramétre (**country**) et non plus à l’objet **window**.
 Ainsi, lorsqu’on appelle la fonction ***logCountryInfo***, celle-ci fait appelle à **this.getDescription()** qui correspond maintenant à **country.getDescription()**.
+
 Il existe aussi une autre maniére de créer le bind, en l’invoquant directement à la définition de la fonction :
 
 ```javascript
@@ -66,7 +67,7 @@ var getMoreInfoAboutCountry= function(continent, population){
 getMoreInfoAboutCountry.apply(country, ['Europe', '60 M']); // éxécute directement la fonction getMoreInfoAboutCountry avec l'objet "country" comme référence de "this"
 ```
 
-3. apply(): st identique à ***call()***, à la différence que tous les arguments en dehors de celui qui représente l’objet **this**, doivent être passés dans un array
+3. apply(): est identique à ***call()***, à la différence que tous les arguments en dehors de celui qui représente l’objet **this**, doivent être passés dans un array
 
 ```javascript
 /**apply() */
@@ -74,6 +75,6 @@ getMoreInfoAboutCountry.apply(country, ['Europe', '60 M']); // éxécute directe
 getMoreInfoAboutCountry.apply(country, ['Europe', '60 M']); // éxécute directement la fonction getMoreInfoAboutCountry avec l'objet "country" comme référence de "this". apply() prend un array en paramétre
 ```
 
-En résumé, les 3 méthodes permettent de changer la référence de **this**. bind() n’éxécute pas la fonction, mais crée une copie de celle-ci, contrairement à call() et apply() qui exécute la fonction.
+En résumé, les 3 méthodes permettent de changer la référence de **this**. **bind()** n’éxécute pas la fonction, mais crée une copie de celle-ci, contrairement à **call()** et **apply()** qui exécute la fonction.
 
 Vous pouvez retrouver plus de détails sur les notions **bind**, **call**, **apply** ou encore **this** sur [Mozilla Developer Network](https://developer.mozilla.org/fr/docs/Web/JavaScript).
